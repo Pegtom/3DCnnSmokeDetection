@@ -1,7 +1,8 @@
 # 3DCnnSmokeDetection
 
-I used a parallel 3dCNN model based on https://github.com/dipakkr/3d-cnn-action-recognition for action recognition using the UCF101 dataset. I had to modify this code due to my custom dataset. You can use the UCF101 dataset as well via the modified code.
-Because of the high amount of data, I faced many errors, such as memory allocation and lack of ram space. As a result, I had to modify the code and use generators to produce batches of frames in the pipeline. 
+I used a parallel 3dCNN model based on https://github.com/dipakkr/3d-cnn-action-recognition for action recognition using the UCF101 dataset, which was not working in the first place. I had to modify this code due to my custom dataset. You can use the UCF101 dataset as well via the modified code.
+Because of the high amount of data, I faced many errors, such as memory allocation and lack of ram space. As a result, I had to modify the code and use generators to produce batches of frames in the pipeline.
+To achieve this goal, I  prepared my dataset, defined the number of steps to complete one epoch, and turned the file paths into labels and frames using the video converter I found on the original code. Finally, I fixed my input size and passed all my attributes to my new generator.
 
 # Options
 Options of 3dcnn.py are as follows:
